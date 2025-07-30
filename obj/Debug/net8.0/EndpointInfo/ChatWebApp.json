@@ -378,6 +378,44 @@
         }
       }
     },
+    "/api/Registration/LoginByTooken": {
+      "post": {
+        "tags": [
+          "Registration"
+        ],
+        "parameters": [
+          {
+            "name": "tooken",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/User"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/WeatherForecast": {
       "get": {
         "tags": [
@@ -474,6 +512,10 @@
           "contactId": {
             "type": "integer",
             "format": "int32"
+          },
+          "lastMessage": {
+            "type": "string",
+            "format": "date-time"
           }
         },
         "additionalProperties": false

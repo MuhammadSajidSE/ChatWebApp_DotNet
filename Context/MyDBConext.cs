@@ -13,5 +13,6 @@ namespace ChatWebApp.Context
         public DbSet<Contacts> Contacts { get; set; }
         public DbSet<Messages> Messages { get; set; }
         public DbSet<Session> Sessions { get; set; }
+        public DbSet<UsavedContact> usavedContacts { get; set; }
     }
 }

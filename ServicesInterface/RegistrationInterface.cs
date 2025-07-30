@@ -11,5 +11,9 @@ namespace ChatWebApp.ServicesInterface
         Task<User?> VerifyUserAsync(LoginDTO loginData);
         string GenerateJwtToken(User user, JwtTokenGenerator tokenGenerator);
         Task<string> SessionUpdate(Session session);
+
+        Task<User> GetByTooken(string tooken);
+
+        Task<Boolean> CheckTookenValidity(string tooken);
     }
 }

@@ -10,6 +10,7 @@ namespace ChatWebApp.Models
         public int UserId {  get; set; }
         [ForeignKey("User")]
         public int ContactId { get; set; }
+        public DateTime LastMessage { get; set; }
         ICollection<User> Users { get; set; }=new List<User>();
     }
 }

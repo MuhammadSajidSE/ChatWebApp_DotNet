@@ -16,7 +16,6 @@ namespace ChatWebApp.ServiceImplementation
         {
             context = _context;
         }
-
         public async Task<bool> CheckExist(User user)
         {
             var data = await context.Users.FirstOrDefaultAsync(a=>a.phoneNo==user.phoneNo);
@@ -77,6 +76,33 @@ namespace ChatWebApp.ServiceImplementation
                 // Add logic to handle expiration or update session if needed  
                 return existingSession.JWTtooken;
             }
+        }
+
+        public async Task<User> GetByTooken(string tooken)
+        {
+            var data = await context.Sessions.FirstOrDefaultAsync(a=>a.JWTtooken == tooken);
+            var userdata = await context.Users.FirstOrDefaultAsync(a => a.UserId == data.UserId);
+            return userdata;
+        }
+
+        public async Task<bool> CheckTookenValidity(string tooken)
+        {
+            var data = await context.Sessions.FirstOrDefaultAsync(a => a.JWTtooken == tooken);
+            if (data==null)
+            {
+                return false;
+            }
+            else
+            {
+                DateTime currentTimes = DateTime.Now;
+                bool expire = (currentTimes - data.Generatedtime) >= TimeSpan.FromDays(365);
+                if (expire)
+                {
+                    return false;
+                }
+                return true;
+            }
+
         }
     }
 }

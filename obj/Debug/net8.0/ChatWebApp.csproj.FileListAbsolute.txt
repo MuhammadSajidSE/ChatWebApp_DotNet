@@ -179,3 +179,5 @@ E:\Dot Net Angluar\ChatWebApp\Backend\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Mic
 E:\Dot Net Angluar\ChatWebApp\Backend\ChatWebApp\ChatWebApp\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
 E:\Dot Net Angluar\ChatWebApp\Backend\ChatWebApp\ChatWebApp\bin\Debug\net8.0\System.Security.Cryptography.Xml.dll
 E:\Dot Net Angluar\ChatWebApp\Backend\ChatWebApp\ChatWebApp\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
+E:\Dot Net Angluar\ChatWebApp\Backend\ChatWebApp\ChatWebApp\bin\Debug\net8.0\Newtonsoft.Json.dll
+E:\Dot Net Angluar\ChatWebApp\Backend\ChatWebApp\ChatWebApp\bin\Debug\net8.0\System.Net.WebSockets.WebSocketProtocol.dll

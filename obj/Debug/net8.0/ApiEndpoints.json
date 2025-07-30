@@ -112,7 +112,7 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "recivedMeatadata",
+        "Name": "recivedMetadata",
         "Type": "ChatWebApp.DTOLayer.RecieveMessageDTO",
         "IsRequired": true
       }
@@ -172,6 +172,32 @@
     "ReturnTypes": [
       {
         "Type": "System.String",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
+  },
+  {
+    "ContainingType": "ChatWebApp.Controllers.RegistrationController",
+    "Method": "LoginByTooken",
+    "RelativePath": "api/Registration/LoginByTooken",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "tooken",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "ChatWebApp.Models.User",
         "MediaTypes": [
           "text/plain",
           "application/json",

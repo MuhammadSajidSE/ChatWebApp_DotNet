@@ -63,17 +63,31 @@ namespace ChatWebApp.Controllers
         }
 
         [HttpPost("SendMessage")]
-        public async Task<ActionResult<Messages>> SendMessage(SendMessage newmessage)
+        public async Task<ActionResult<Messages>> SendMessage([FromBody] SendMessage newmessage)
         {
             var data = await messageInterface.SendMessage(newmessage);
             return Ok(data);
         }
 
         [HttpPost("RecievedMessage")]
-        public async Task<ActionResult<List<Messages>>> RecievedMessage(RecieveMessageDTO recivedMeatadata)
+        public async Task<ActionResult<List<Messages>>> RecievedMessage([FromBody] RecieveMessageDTO recivedMetadata)
         {
-            var data = await messageInterface.RecievedMessage(recivedMeatadata);
+            var data = await messageInterface.RecievedMessage(recivedMetadata);
             return Ok(data);
         }
+
+        //[HttpPost("SendMessage")]
+        //public async Task<ActionResult<Messages>> SendMessage(SendMessage newmessage)
+        //{
+        //    var data = await messageInterface.SendMessage(newmessage);
+        //    return Ok(data);
+        //}
+
+        //[HttpPost("RecievedMessage")]
+        //public async Task<ActionResult<List<Messages>>> RecievedMessage(RecieveMessageDTO recivedMeatadata)
+        //{
+        //    var data = await messageInterface.RecievedMessage(recivedMeatadata);
+        //    return Ok(data);
+        //}
     }
 }
